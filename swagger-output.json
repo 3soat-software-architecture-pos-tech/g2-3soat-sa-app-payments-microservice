@@ -1,0 +1,95 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API Sistema de pedidos",
+    "description": "Pos-Tech 3SOAT",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/payment/": {
+      "post": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "AddPayment": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "example": "Description of payment"
+        },
+        "order": {
+          "type": "string",
+          "example": "ID Order generated"
+        },
+        "status": {
+          "type": "string",
+          "example": "Pending"
+        },
+        "value": {
+          "type": "number",
+          "example": 100
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "sku_number": {
+                "type": "string",
+                "example": "A123K9191938"
+              },
+              "category": {
+                "type": "string",
+                "example": "marketplace"
+              },
+              "title": {
+                "type": "string",
+                "example": "Point Mini"
+              },
+              "description": {
+                "type": "string",
+                "example": "This is the Point Mini"
+              },
+              "unit_price": {
+                "type": "number",
+                "example": 100
+              },
+              "quantity": {
+                "type": "number",
+                "example": 1
+              },
+              "unit_measure": {
+                "type": "string",
+                "example": "unit"
+              },
+              "total_amount": {
+                "type": "number",
+                "example": 100
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "description",
+        "order",
+        "status",
+        "value",
+        "items"
+      ]
+    }
+  }
+}
