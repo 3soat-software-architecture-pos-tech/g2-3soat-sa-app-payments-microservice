@@ -3,8 +3,7 @@ import paymentController from "../controllers/paymentController.js";
 export default function paymentRoutes(express) {
 	const router = express.Router();
 	const controller = paymentController();
-
-  //POST ENDPOINTS
+  
   router.route('/').post(controller.addNewPayment,
     // swagger.tags = ['Payment']
 		// swagger.description = 'Endpoint to add a payment.'
