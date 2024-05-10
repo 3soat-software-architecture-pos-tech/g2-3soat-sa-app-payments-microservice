@@ -76,7 +76,5 @@ describe("paymentRepository", () => {
       expect(db.commit).not.toHaveBeenCalled();
       expect(db.rollback).not.toHaveBeenCalled();
     });
-
-    // Add more test cases to cover other scenarios
   });
 });
