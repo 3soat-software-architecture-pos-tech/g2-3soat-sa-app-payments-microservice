@@ -14,10 +14,5 @@ RUN npm run doc
 
 EXPOSE 3000 3306
 
-CMD ["npm", "run", "dev", \
-    "&&", \
-    "whcli", "forward", \
-    "--token=f70e7d6a-9a12-4b7e-bb8d-62edb4f957", \
-    "--api-key=f70e7d6a-9a12-4b7e-bb8d-62edb4f957", \
-    "--target=http://localhost/webhook"]
+CMD ["npm", "run", "dev"]
 

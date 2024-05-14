@@ -26,7 +26,7 @@ describe('getQrCodeFile', () => {
     const expectedTempLink = 'http://localhost:3000/MockedUUID.png';
 
     getQrCodeFile(qrData);
-    
+
     expect(require('qrcode').toDataURL).toHaveBeenCalledWith(qrData, expect.any(Function));
     expect(require('uuid').v4).toHaveBeenCalled();
     expect(require('fs').writeFileSync).toHaveBeenCalledWith(

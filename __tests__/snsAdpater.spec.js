@@ -16,7 +16,7 @@ describe("snsGatewayAdapter", () => {
     const message = "Test message";
     const snsMessage = Sns(message);
     snsGatewayAdpater().sendSNSNotification(snsMessage.getMessage());
-    
+
     expect(sendSNSNotificationGateway).toHaveBeenCalledWith(message);
   });
 });

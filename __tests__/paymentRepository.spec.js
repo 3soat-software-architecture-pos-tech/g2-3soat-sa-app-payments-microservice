@@ -18,7 +18,7 @@ describe("paymentRepository", () => {
     });
 
     it("should add a payment to the database", async () => {
-      
+
       const paymentEntity = {
         getOrder: jest.fn().mockReturnValue("order123"),
         getDescription: jest.fn().mockReturnValue("Description of the payment"),

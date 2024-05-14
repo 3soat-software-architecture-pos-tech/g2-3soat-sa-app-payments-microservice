@@ -61,7 +61,7 @@ describe('addPayment function', () => {
   it('returns "data can not be empty" when data is not provided', async () => {
     const result = await addPayment(null);
     expect(result).toBe('data can not be empty');
-    
+
     expect(createNewPayment).not.toHaveBeenCalled();
     expect(getQrCodeFile).not.toHaveBeenCalled();
     expect(createNotification).not.toHaveBeenCalled();

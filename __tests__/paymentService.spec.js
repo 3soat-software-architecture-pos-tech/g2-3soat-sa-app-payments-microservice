@@ -8,8 +8,8 @@ describe("createNewPayment function", () => {
 
   beforeEach(() => {
     jest.clearAllMocks()
-    jest.resetModules(); 
-    process.env = { ...OLD_ENV }; 
+    jest.resetModules();
+    process.env = { ...OLD_ENV };
   });
 
   afterEach(() => {
@@ -38,7 +38,7 @@ describe("createNewPayment function", () => {
     };
 
     const mockPost = jest.fn();
-    axiosClient.mockReturnValueOnce({ post: mockPost }); 
+    axiosClient.mockReturnValueOnce({ post: mockPost });
 
     await createNewPayment(data);
 
@@ -46,7 +46,7 @@ describe("createNewPayment function", () => {
       "Content-Type": "application/json",
       "Authorization": `Bearer ${process.env.TOKEN_VENDEDOR_MP}`,
     });
-    
+
     expect(mockPost).toHaveBeenCalledWith(
       `instore/orders/qr/seller/collectors/${process.env.SELLER_ID}/pos/${ process.env.EXTERNAL_POS_ID}/qrs`,
       JSON.stringify(data)

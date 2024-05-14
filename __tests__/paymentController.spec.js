@@ -92,7 +92,7 @@ describe("paymentController", () => {
       };
 
       await paymentController().addNewPayment(req, res, next);
-  
+
       expect(next).toHaveBeenCalledWith(`Payment creation failed`)
     });
   });

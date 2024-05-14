@@ -9,12 +9,12 @@ jest.mock("../src/api/services/sns", () => ({
 
 jest.mock("../src/application/snsGateway");
 jest.mock("../src/entities/Sns.js", () => {
-    return jest.fn().mockImplementation((message) => {
-      return {
-        getMessage: () => message
-      };
-    });
+  return jest.fn().mockImplementation((message) => {
+    return {
+      getMessage: () => message
+    };
   });
+});
 
 describe("snsGatewayAdapter", () => {
   afterEach(() => {
