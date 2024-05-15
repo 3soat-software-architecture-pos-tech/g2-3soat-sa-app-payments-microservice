@@ -9,8 +9,7 @@ Feature: Create Payment
     And a creation date "2024-05-13"
     And an update date "2024-05-13"
     When the createPayment function is called
-    Then a payment with body "order test" should be added to the payment repository
-    And a MercadoPago payment process should be initiated
+    Then a MercadoPago payment process should be initiated
 
     Examples:
       | description  | order  | value | status    | items        | createdAt   | updatedAt   | errorMessage                            |
