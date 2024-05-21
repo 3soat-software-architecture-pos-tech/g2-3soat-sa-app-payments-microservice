@@ -1,0 +1,65 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: payment-service
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-service-deployment
+  namespace: payment-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: payment-service
+  template:
+    metadata:
+      labels:
+        app: payment-service
+    spec:
+      containers:
+        - name: payment-service
+          image: 767397818445.dkr.ecr.us-east-1.amazonaws.com/app:latest
+          ports:
+            - containerPort: 8080
+          resources:
+            limits:
+              cpu: "1"  # Defina os limites de CPU conforme necessário
+              memory: "2048Mi"  # Defina os limites de memória conforme necessário
+            requests:
+              cpu: "1"  # Defina as solicitações de CPU conforme necessário
+              memory: "2048Mi"  # Defina as solicitações de memória conforme necessário
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: payment-service
+spec:
+  selector:
+    app: payment-service
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: LoadBalancer
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app-ingress
+  namespace: app
+spec:
+  rules:
+    - host: payment-service.com
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: payment-service
+                port:
+                  number: 80
+                  
