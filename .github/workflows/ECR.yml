@@ -3,10 +3,7 @@ name: Build and Push Docker Image to ECR
 on:
   push:
     branches:
-      - homolog
-  pull_request:
-    branches:
-      - homolog
+      - dev
 
 jobs:
   build-and-push:
