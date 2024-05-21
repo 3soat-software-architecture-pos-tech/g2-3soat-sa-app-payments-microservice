@@ -48,4 +48,4 @@ jobs:
         run: kubectl apply -f service.yml
 
       - name: Apply Kubernetes app
-        run: kubectl apply -f pod_app.yml
+        run: kubectl apply -f payment_app.yml
