@@ -13,13 +13,16 @@ Para rodar um teste específico, você pode executar o comando
 ```bash
 $ npm run test <caminho-do-teste>
 ```
-
+Para rodar o teste BDD
+```bash
+$ npm run bdd
+```
 
 ## Tech challenge Fase 4
 
 ### Desenho da arquitetura
 
-![TECH CHALLENGE-payment](https://github.com/3soat-software-architecture-pos-tech/g2-3soat-sa-app-category-product/assets/23316988/2b5a0e3c-f88b-4cd1-9d01-868dffae61be)
+![alt text](image.png)
 
 ### Collection:
 
@@ -39,6 +42,14 @@ Nosso banco de dados já está populado, no entanto, caso deseje criar novos reg
 ## Cobertura de teste evidências
  - Jest 
 ![alt text](CoverageTest.png)
+
+## Materias de Referência
+- Alura: [Node js testes unitários e de integração](https://cursos.alura.com.br/course/nodejs-testes-unitarios-integracao)
+- Alura: [Node js API Rest com Express e MongoDB](https://cursos.alura.com.br/course/nodejs-api-rest-express-mongodb)
+- Alura: [O que é Behavior-Driven Development (BDD)](https://cursos.alura.com.br/extra/alura-mais/o-que-e-behavior-driven-development-bdd--c284)
+- Jest: [Documentation](https://jestjs.io/)
+- ESLint : [Documentation](https://pt-br.eslint.org/)
+- Sonar Cloud: [Documentation](https://docs.sonarsource.com/sonarcloud/)
 
 ## Team
  - Turma: 3SOAT
