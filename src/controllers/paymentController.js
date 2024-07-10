@@ -2,9 +2,9 @@ import useCaseCreate from '../use_cases/payment/add.js'
 
 export default function paymentController() {
 
-  const addNewPayment = async (req, res, next) => {
+  const addNewPayment = async (req) => {
 
-    const { description, order, total_amount, items } = req.body;
+    const { description, order, total_amount, items } = req;
 
     await useCaseCreate(
       description,
@@ -16,8 +16,6 @@ export default function paymentController() {
       Date()//,
       //dbRepository
     )
-      .then((payment) => res.json(payment))
-      .catch((error) => res.json(next(`Payment creation failed`)));
   };
 
   return {
