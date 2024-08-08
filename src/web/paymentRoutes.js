@@ -4,7 +4,7 @@ export default function paymentRoutes(express) {
   const router = express.Router();
   const controller = paymentController();
 
-  router.route('/').post(controller.addNewPayment,
+  router.route('/').get(controller.fetchAllPayments,
     // swagger.tags = ['Payment']
     // swagger.description = 'Endpoint to add a payment.'
 

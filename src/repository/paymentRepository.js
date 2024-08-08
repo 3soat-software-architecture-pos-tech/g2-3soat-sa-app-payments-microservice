@@ -31,8 +31,40 @@ export default function paymentRepositoryMongoDB() {
     });
   };
 
+  const findAll = async () => {
+    return new Promise((resolve, reject) => {
+
+      // Begin transaction
+      db.beginTransaction((beginError) => {
+        if (beginError) {
+          return reject(beginError);
+        }
+
+        const select = "SELECT * FROM payments";
+        db.query(select, (queryError, result) => {
+          if (queryError) {
+            // Rollback the transaction if there is an error
+            return db.rollback(() => reject(queryError));
+          }
+
+          // Commit the transaction and close the connection
+          db.commit((commitError) => {
+            if (commitError) {
+              // Rollback the transaction if there is an error during commit
+              return db.rollback(() => reject(commitError));
+            }
+
+            // Resolve with the query result
+            resolve(result);
+          });
+        });
+      });
+    });
+  };
+
   return {
-    add
+    add,
+    findAll
   }
 }
 
