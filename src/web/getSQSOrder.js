@@ -9,7 +9,7 @@ AWS.config.update({
 
 const sqs = new AWS.SQS({ apiVersion: '2012-11-05' });
 
-const queueURL = 'https://sqs.us-east-1.amazonaws.com/689666980793/order-notification';
+const queueURL = process.env.SQS_ORDER_PAYMENT
 
 const params = {
   QueueUrl: queueURL,
