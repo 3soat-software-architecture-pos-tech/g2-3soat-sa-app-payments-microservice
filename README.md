@@ -18,12 +18,6 @@ Para rodar o teste BDD
 $ npm run bdd
 ```
 
-## Tech challenge Fase 4
-
-### Desenho da arquitetura
-
-![alt text](image.png)
-
 ## Tech challenge Fase 5
 
 ### Desenho da arquitetura
@@ -57,8 +51,8 @@ Nosso banco de dados já está populado, no entanto, caso deseje criar novos reg
 ![alt text](CoverageTest.png)
 
 ## Relatório Pre Owasp Zap
-- Relatório Antes [Documentation]([https://github.com/3soat-software-architecture-pos-tech/g2-3soat-sa-app-category-product/blob/main/ZAP%20Scanning%20Report_14JUL2024.pdf](https://github.com/3soat-software-architecture-pos-tech/g2-3soat-sa-app-payments-microservice/blob/main/owaspzap/zapscanningbefore.pdf))
-- Relatório Depois [Documentation]([https://github.com/3soat-software-architecture-pos-tech/g2-3soat-sa-app-category-product/blob/main/ZAP%20Scanning%20Report%20-%20Solved.pdf](https://github.com/3soat-software-architecture-pos-tech/g2-3soat-sa-app-payments-microservice/blob/main/owaspzap/zapscanningafter.pdf))
+- Relatório Antes [Documentation](https://github.com/3soat-software-architecture-pos-tech/g2-3soat-sa-app-payments-microservice/blob/main/owaspzap/zapscanningbefore.pdf)
+- Relatório Depois [Documentation](https://github.com/3soat-software-architecture-pos-tech/g2-3soat-sa-app-payments-microservice/blob/main/owaspzap/zapscanningafter.pdf)
 
 ## Materias de Referência
 - Alura: [Node js testes unitários e de integração](https://cursos.alura.com.br/course/nodejs-testes-unitarios-integracao)
